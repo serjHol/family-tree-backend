@@ -13,7 +13,7 @@ CREATE TABLE people (
 
 CREATE TABLE relation_type (
     id bigserial primary key not null,
-    type varchar(255) UNIQUE,
+    type varchar(255)
 );
 
 
@@ -38,7 +38,8 @@ INSERT INTO gender (gender_value) values ('Male'), ('Female');
 
 INSERT INTO people 
 (id, first_name, last_name, gender_id, age)
- values (1, 'Test', 'Adam', 1, 30), (2, 'Test', 'Eve', 2, 35);
+ values (1, 'Test', 'Adam', 1, 30), (2, 'Test', 'Eve', 2, 35), (3, 'Child', 'AA', 1, 8);
 INSERT INTO people (first_name, last_name, gender_id, age) values ('Child', 'AA', 1, 8);
-INSERT INTO relation (id_1, id_2, type_id) values (1, 5, 1), (2, 5, 1), (1, 2, 2);
+select setval('people_id_seq', 100);
+INSERT INTO relation (id_1, id_2, type_id) values (1, 101, 1), (2, 101, 1), (1, 2, 2);
 

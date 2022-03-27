@@ -1,11 +1,13 @@
 const Pool = require("pg").Pool;
-
-const pool = new Pool({
-    user: "postgres",
-    password: "jsanarchy",
-    host: "localhost",
-    port: 5432,
-    database: "family_tree",
+const { Client } = require("pg");
+console.log(process.env.DATABASE_URL)
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
-module.exports = pool;
+client.connect();
+
+module.exports = client;
