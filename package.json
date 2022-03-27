@@ -1,0 +1,17 @@
+{
+    "name": "family-tree-backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.17.3",
+        "pg": "^8.7.3"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js"
+      },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
+}
